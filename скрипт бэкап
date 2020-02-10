@@ -1,0 +1,21 @@
+
+на стороне, с которой делается бэкап
+
+crontab (каждые 4 часа по будням)
+1 */4 * * 1-5 /home/script.sh
+
+
+сам скрипт
+rsync -avzhe "ssh -p 22" /opt/Softname/configurate.conf ubuntu@18.188.54.47:/home/github2/configurate$(date +"%F_%T").conf.backup
+
+
+
+на стороне, на которую делается бэкап
+
+
+crontab (ежедневно в 12 часов)
+1 12 * * * /home/script_backup.sh
+
+
+сам скрипт
+rm /home/github2/*$(date -d "now -4 day" +"%F" ).conf.backup*
