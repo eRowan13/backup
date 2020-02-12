@@ -1,0 +1,10 @@
+1. ps aux | grep init
+2. 1
+3. +
+4. ps aux | grep %username%
+5. Строка -bash (1350)
+6. Строка sshd: %username%@pts/0
+Проверить 5 и 6: pstree -p
+7. sleep 3342 & sleep 3342 &
+8. Определяются автоматически // ps aux | grep sleep
+9. top -> о -> COMMAND=sleep
